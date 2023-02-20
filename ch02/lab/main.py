@@ -55,7 +55,7 @@ x = random.randrange(11)
 y = random.randrange(11)
 
 
-for i in range(25): #Is the number in range arbitrary? 
+for i in range(10):
     pen1.forward(x)
     pen2.forward(y)
 
