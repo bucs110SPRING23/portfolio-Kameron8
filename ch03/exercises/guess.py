@@ -1,6 +1,6 @@
 import random 
 
-winningnumber = random.randrange(11)
+winningnumber = random.randrange(1, 11)
 
 for _ in range(3):
     message = """
