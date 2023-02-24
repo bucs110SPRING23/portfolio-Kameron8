@@ -4,15 +4,15 @@ winningnumber = random.randrange(1, 11)
 
 for _ in range(3):
     message = """
-        Guess the number 
+        Guess a number between 1 and 10 
         """
 
     response = int(input(message))
 
     if response > winningnumber:
-        print("Too High")
+        print("Too High!")
     elif response < winningnumber:
-        print("Too Low")
+        print("Too Low!")
     elif response == winningnumber:
-        print("correct!")
+        print("Correct!")
         break
