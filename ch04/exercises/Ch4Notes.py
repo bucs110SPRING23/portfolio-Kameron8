@@ -104,12 +104,12 @@ mynums = [1,2,3,4,5]
 
 ##Can do this by using a strategy called a dictionary 
 
-contact = { #Use squiggly brackets in order to create a dictionary where each contact is indexable by name 
-    "Bill": "867-5309",
-    "Jane": "555-1212"
-}
+#contact = { #Use squiggly brackets in order to create a dictionary where each contact is indexable by name 
+    #"Bill": "867-5309",
+   # "Jane": "555-1212"
+#}
 
-contact["Joe"] = "314-1592" #Add joe to the list of contacts, if Joe was already in the list it will update the current key 
+#contact["Joe"] = "314-1592" #Add joe to the list of contacts, if Joe was already in the list it will update the current key 
 ## numbers can be the same as one another though 
 
 #name = input("Enter a name: ")
@@ -126,11 +126,21 @@ contact["Joe"] = "314-1592" #Add joe to the list of contacts, if Joe was already
    # print(contact[c]) #Prints out the key and the value 
 
 #for key, value in contact.items: #Similar to enumerate 
-    print(key)
-    print(value) 
+   # print(key)
+   # print(value) 
 
 
 #Use get() only for reading and doesn't break the program if something is not present in the dictionary 
 
-    if contact.get("juan"):
-        print(contact["juan"])
+   # if contact.get("juan"):
+        #print(contact["juan"])
+
+#While loop can be used for infinite amount of iterations 
+
+# i = 0 #Iterating variable 
+# while i < 10: 
+   # print(i)
+   # i += 1 #Iterating variable must change in order for while loops to work properly
+
+#Any for loop can be recreated with a while loop 
+#Some while loops canNOT be recreated with for loops 

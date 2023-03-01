@@ -16,20 +16,19 @@ width, height = pygame.display.get_window_size()
 hitbox_width = width / 2
 hitbox_height = height
 
-#pygame.Rect(x, y, width, height) (x,y) are the starting coordinates while width and height is the size of the rectangle 
-
-#No clue how to make the hitboxes show up 
 hitboxes = {
     "Gold": pygame.Rect(0,0, hitbox_width, hitbox_height),
     "Slate Blue": pygame.Rect(0,0, hitbox_width, hitbox_height),
 }
 
 hitboxes["Gold"].left = hitboxes["Slate Blue"].right
-#No clue how to make the hitboxes show up 
+
 
 while 1:
     pygame.event.get()
     screensize = pygame.display.get_window_size()
+    hitboxes["Gold"].left = hitboxes["Slate Blue"].right
+    pygame.display.flip()
 
     for i in range(num_sides): #Generating points for circle of dartboard
         angle = 360/num_sides
@@ -96,6 +95,3 @@ while 1:
     pygame.time.wait(4000)
 
     break
-
-
-## Each player gets their own color that will be the color of the darts in the circle and then any dart that misses will be red 
