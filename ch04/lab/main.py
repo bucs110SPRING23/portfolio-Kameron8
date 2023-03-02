@@ -13,24 +13,50 @@ violetscore = 0
 font = pygame.font.Font(None, 48)
 window = pygame.display.set_mode(size = (700, 700))
 width, height = pygame.display.get_window_size()
-hitbox_width = width / 2
-hitbox_height = height
+hitbox_width = int(width / 2)
+hitbox_height = int(height)
 
 #pygame.Rect(x, y, width, height) (x,y) are the starting coordinates while width and height is the size of the rectangle 
 
-#No clue how to make the hitboxes show up 
+
 hitboxes = {
     "Gold": pygame.Rect(0,0, hitbox_width, hitbox_height),
-    "Slate Blue": pygame.Rect(0,0, hitbox_width, hitbox_height),
+    "Slate Blue": pygame.Rect(350,0, hitbox_width, hitbox_height),
 }
 
-hitboxes["Gold"].left = hitboxes["Slate Blue"].right
-#No clue how to make the hitboxes show up 
+
+#Define hitbox colors
+colors = {
+    "Gold": "Gold",
+    "Slate Blue": "Slate Blue",
+}
+
+order = list(hitboxes.keys())
+prediction = []
+predicttext = font.render("Pick Which Color Will Win" , True, "white")
 
 while 1:
     pygame.event.get()
-    screensize = pygame.display.get_window_size()
+    screensize = pygame.display.get_window_size()  
+    pygame.draw.rect(window, "Gold", (0,0, hitbox_width, hitbox_height))
+    pygame.draw.rect(window, "Slate Blue", (350,0, hitbox_width, hitbox_height)) 
+    pygame.display.flip()
+    pygame.draw.rect(window, "black", (150,300, 425,40) )
+    window.blit(predicttext, (150,300))
+    pygame.display.flip()
+    pygame.time.delay(5000)
 
+    for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN: 
+            if hitboxes["Gold"].collidepoint(event.pos):
+                prediction.append("Gold")
+                window.fill("AntiqueWhite2")
+            elif hitboxes["Slate Blue"].collidepoint(event.pos):
+                prediction.append("Violet")
+                window.fill("AntiqueWhite2")
+        
+
+    print(prediction)
     for i in range(num_sides): #Generating points for circle of dartboard
         angle = 360/num_sides
         radians = math.radians(angle * i)
@@ -81,21 +107,33 @@ while 1:
             pygame.time.wait(1000)
 
     if goldscore > violetscore: 
-        text = font.render("Gold Wins!" , True, "white")
+        text1 = font.render("Gold Wins!" , True, "white")
+        winner = ["Gold"]
 
     elif violetscore > goldscore:
-        text = font.render("Violet Wins!" , True, "white")
+        text1 = font.render("Violet Wins!" , True, "white")
+        winner = ["Violet"]
 
     else: 
-        text = font.render("It's a Tie!" , True, "white")
+        text1 = font.render("It's a Tie!" , True, "white")
+        winner = ["Neither"]
+
+    
+    
+    if prediction == winner: 
+        text2 = font.render("Your Prediction Was Correct!", True, "white")
+    elif prediction != winner:
+        text2 = font.render("Your Prediction Was Wrong!", True, "White")
 
    
-    pygame.draw.rect(window, "black", (275,300,200,40))
-    window.blit(text, (275,300) )
+    pygame.draw.rect(window, "Black", (275,300,200,40))
+    pygame.draw.rect(window, "Black",(175,340, 475,40) )
+    window.blit(text1, (275,300))
+    window.blit(text2, (175,340))
     pygame.display.flip()
     pygame.time.wait(4000)
 
+    
+
     break
 
-
-## Each player gets their own color that will be the color of the darts in the circle and then any dart that misses will be red 
