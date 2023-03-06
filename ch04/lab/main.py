@@ -56,7 +56,6 @@ while 1:
                 window.fill("AntiqueWhite2")
         
 
-    print(prediction)
     for i in range(num_sides): #Generating points for circle of dartboard
         angle = 360/num_sides
         radians = math.radians(angle * i)
