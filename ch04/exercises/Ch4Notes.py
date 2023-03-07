@@ -47,7 +47,7 @@
 #print(mynums)
 
 
-mynums = [1,2,3,4,5]
+#mynums = [1,2,3,4,5]
 
 #for i in mynums:
    # i = i * 2

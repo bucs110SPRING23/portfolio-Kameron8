@@ -1,0 +1,62 @@
+#Chapter 5 Notes 
+
+#Vending Machine Example- 
+#don't need to know the inner workings of a vending machine for the user to be able to use it
+
+#Vending Machine Example  
+print("Welcome to the Vending Machine") #Function 
+code = (input("Please enter a code: "))
+money = int(input("Give me money: "))
+
+def my_vending_machine (code,money): #Functions are always defined in global scope: Scope says where Data/Algorithm is accessible 
+    if code == "C":
+        if money >= 1:
+            print("You got a Coke")
+        else: 
+            print("You need more money")
+    elif code == "J":
+        if money >= 2:
+            print("You got a juice")
+        else:
+            print("You need more money")
+    elif code == "W":
+        if money >= 3:
+            print("You got a water")
+        else:
+            print("You need more money")
+    else:
+        print("Invalid Code")
+
+my_vending_machine(code,money)
+
+
+#Finding max of numbers example 
+#Single Responsibility Principle- A function should only do one thing 
+#Code initially responsible for both gathering and evaluating information 
+#A function should never be responsible for input/getting data 
+
+def find_max(x,y,z):  #Just defining a function not using the function yet. Equivalent of recipe without ingredients if B and C are not yet defined 
+    max = x
+    if y > max:
+        max = y
+    if z > max:
+        max = z
+
+    print(max) #x,y,z are variable of the function but we can use a,b,c later since just there value is being put into the function
+
+
+print("Please Enter 3 Numbers: ")
+a = int(input(": ")) #Eventually putting variables in global scope becomes an issue.
+b = int(input(": ")) #Can lead to collisions aka having two variables with the same name in the same scope 
+c = int(input(": "))
+find_max(a,b,c)
+
+
+def foo(var): #Using the same name that is already being used as a global variable is called shadowing
+    var += 1 #Makes it so the data is now inaccessible (essentially)
+    print(var)
+
+var = 5
+
+foo(var) #Prints 6, but the variable itself does not change, the function only takes the value of the variable   
+print(var) #Prints 5, Var does not get changed because the function is not being executed when you print var 
