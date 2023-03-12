@@ -5,7 +5,7 @@
 
 #Vending Machine Example  
 print("Welcome to the Vending Machine") #Function 
-code = (input("Please enter a code: "))
+code = (input("Please enter a code (C, J or W): "))
 money = int(input("Give me money: "))
 
 def my_vending_machine (code,money): #Functions are always defined in global scope: Scope says where Data/Algorithm is accessible 
@@ -52,11 +52,97 @@ c = int(input(": "))
 find_max(a,b,c)
 
 
-def foo(var): #Using the same name that is already being used as a global variable is called shadowing
-    var += 1 #Makes it so the data is now inaccessible (essentially)
-    print(var)
+#def foo(var): #Using the same name that is already being used as a global variable is called shadowing
+    #var += 1 #Makes it so the data is now inaccessible (essentially)
+    #print(var)
 
-var = 5
+#var = 5
 
-foo(var) #Prints 6, but the variable itself does not change, the function only takes the value of the variable   
-print(var) #Prints 5, Var does not get changed because the function is not being executed when you print var 
+#foo(var) #Prints 6, but the variable itself does not change, the function only takes the value of the variable   
+#print(var) #Prints 5, Var does not get changed because the function is not being executed when you print var 
+
+
+#def bar(x=0, y=2, z=3): #using named variables in our functions 
+    #print(x,y,z)
+
+#bar(z=1,x=2) #Allows us to change x and z but leave y as the default 
+
+
+#global_var = 5 #Global scope- Takes up memory the entire time the program is running
+
+#def foo():
+    #local_var = 5 #Local scope, can only be used within foo() and no where else. Gets deleted at the end of the function
+#Parameters are local variables 
+#Functions must return a value 
+
+#def foo2():
+  #  x=5
+    #Return none : NoneType, object represents nothing for a computer 
+
+#def bar(x=None):
+   # if x is None:
+    #    x = 5*2
+
+    
+
+#print(foo2())
+
+#def foo():
+    #x = 5
+    #return x #Not returning x itself but rather the value of 5, takes value and throws x away  
+
+#y = foo()
+#print(y)
+
+#def bar():
+   # x = 5
+    #return x, 6 #Always ends function 
+
+#y, x = bar()
+#print(y, x) #Prints out two values from one function using tuples 
+
+#def foo():
+   # x = 5
+   # if x > 5:
+      #  return x #Will end function here
+   # else:
+        #return 5 #Will end function here 
+   # print("This will never print") #Will never execute 
+
+
+#print(foo()) #Function becomes the value it returns, works if we only need variable one time, otherwise we need to save it a sa variable to continue using it 
+
+
+#def my_func(x=0):
+    #return x + x
+#my_func(5)
+#print(x) #X is not defined because x is only defined locally in my_func
+
+#def powerof(x=0,p=0):
+  #  power = p
+   # y = x**power
+   # return y
+
+#result = powerof(5,3) # Y = f(x)
+#print(result)
+
+#def foo():
+   # x = 5 
+   # print(x*x) #Still prints 25, No-Op 
+
+#def foo2():
+    #x = 5
+    #return x*x
+
+#print(foo()) #Prints None because the value of the first function is not saved 
+#Nested functions execute from the inside out, hence allowing for the first 25 to still print out despite the entire line being None
+#print(foo2()) #Prints 25 
+
+
+#Case Conventions 
+# def FooBar(): Conventional in Java 
+# def foo_bar(): Conventional in Python and C
+# File extensions are conventions and does not mean anything 
+
+# one thing you put in global space is your main() function 
+# the last thing you do is call main() at the end of your program 

@@ -6,7 +6,6 @@ def star_pyramid():
             print(i*"* ", end= " ")
             print("\n")
 
-
 def rstar_pyramid():
     for i in reversed(range(1,g+1)):
          print(i*"* ", end= " ")

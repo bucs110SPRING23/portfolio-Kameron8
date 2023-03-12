@@ -1,6 +1,16 @@
 
 import pygame
 
+pygame.init()
+
+window = pygame.display.set_mode()
+new_display = pygame.transform.flip(window,False,True)
+width, height = new_display.get_size()
+new_display = pygame.transform.scale(new_display, (width * 5, height * 5))
+
+inputvalues = []
+outputvalues = []
+
 def threenp1(n):
     count = 0
     while n > 1.0:
@@ -13,9 +23,6 @@ def threenp1(n):
 
 def threenp1range(a): #Get the number of itrerations to reach 1 for all values from two until the upper limit
     list1 = list(range(2,a+1))
-    inputvalues = []
-    outputvalues = []
-
     n = 0
     for _ in list1:
         count = 0 
@@ -34,20 +41,16 @@ def threenp1range(a): #Get the number of itrerations to reach 1 for all values f
         
 
 def graph_coordinates(coordinates): 
-    window = pygame.display.set_mode()
     while 1: 
         pygame.event.get()
-        window.fill("White")
-        pygame.draw.lines(window, "Orange", False, coordinates)
-        pygame.display.flip()
+        window.blit(new_display, (0,0))
+        pygame.draw.lines(new_display, "Orange", False, coordinates)
+        pygame.new_display.flip()
         pygame.time.wait(5000)
-        break
 
 
 
 def main():
-    pygame.init()
     print(threenp1(int(input(": "))))
-    graph_coordinates(threenp1range(int(input(": "))))
+    print(threenp1range(int(input(": "))))
 
-main()
