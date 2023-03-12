@@ -4,9 +4,9 @@ import pygame
 pygame.init()
 
 window = pygame.display.set_mode()
-new_display = pygame.transform.flip(window,False,True)
-width, height = new_display.get_size()
-new_display = pygame.transform.scale(new_display, (width * 5, height * 5))
+flipped_screen = pygame.transform.flip(window,False,True)
+width, height = flipped_screen.get_size()
+finalscreen = pygame.transform.scale(flipped_screen, (width * 5, height * 5))
 
 inputvalues = []
 outputvalues = []
@@ -43,14 +43,17 @@ def threenp1range(a): #Get the number of itrerations to reach 1 for all values f
 def graph_coordinates(coordinates): 
     while 1: 
         pygame.event.get()
-        window.blit(new_display, (0,0))
-        pygame.draw.lines(new_display, "Orange", False, coordinates)
-        pygame.new_display.flip()
+        window.blit(finalscreen, (0,0))
+        finalscreen.fill("White")
+        pygame.draw.lines(finalscreen, "Orange", False, coordinates)
+        pygame.display.flip()
         pygame.time.wait(5000)
+        break
 
 
 
 def main():
     print(threenp1(int(input(": "))))
-    print(threenp1range(int(input(": "))))
+    graph_coordinates(threenp1range(int(input(": "))))
 
+main()

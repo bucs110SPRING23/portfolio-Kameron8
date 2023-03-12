@@ -13,10 +13,12 @@ def threenp1(n):
 
 def threenp1range(a): #Get the number of itrerations to reach 1 for all values from two until the upper limit
     list1 = list(range(2,a+1))
+    
     inputvalues = []
     outputvalues = []
 
     n = 0
+   
     for _ in list1:
         count = 0 
         inputvalues.append(list1[n])
@@ -32,7 +34,6 @@ def threenp1range(a): #Get the number of itrerations to reach 1 for all values f
     coordinates = list(objs_in_sequence.items())
     return coordinates
         
-
 def graph_coordinates(coordinates): 
     window = pygame.display.set_mode()
     while 1: 
@@ -42,7 +43,6 @@ def graph_coordinates(coordinates):
         pygame.display.flip()
         pygame.time.wait(5000)
         break
-
 
 
 def main():
