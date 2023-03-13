@@ -1,4 +1,9 @@
 def multiply(a,b):
+    """
+    This function takes two parameters and multiplies them together 
+    args: 2 integers
+    return: 1 integer
+    """
     count = 1
     c = 0
     while b >= count:
@@ -7,6 +12,11 @@ def multiply(a,b):
     return c
 
 def exponent(a,b): 
+    """
+    This function takes two parameters and performs an exponent operation
+    args: 2 integers
+    return: 1 integer
+    """
     count = 1
     c = 1
     while b >= count:
@@ -15,6 +25,11 @@ def exponent(a,b):
     return c 
 
 def square(a):
+    """
+    This function squares the input 
+    args: integer 
+    return: integer 
+    """
     return exponent(a,2)
 
 def main():

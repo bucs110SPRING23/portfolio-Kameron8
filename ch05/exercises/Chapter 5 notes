@@ -4,30 +4,30 @@
 #don't need to know the inner workings of a vending machine for the user to be able to use it
 
 #Vending Machine Example  
-print("Welcome to the Vending Machine") #Function 
-code = (input("Please enter a code (C, J or W): "))
-money = int(input("Give me money: "))
+#print("Welcome to the Vending Machine") #Function 
+#code = (input("Please enter a code (C, J or W): "))
+#money = int(input("Give me money: "))
 
-def my_vending_machine (code,money): #Functions are always defined in global scope: Scope says where Data/Algorithm is accessible 
-    if code == "C":
-        if money >= 1:
-            print("You got a Coke")
-        else: 
-            print("You need more money")
-    elif code == "J":
-        if money >= 2:
-            print("You got a juice")
-        else:
-            print("You need more money")
-    elif code == "W":
-        if money >= 3:
-            print("You got a water")
-        else:
-            print("You need more money")
-    else:
-        print("Invalid Code")
+#def my_vending_machine (code,money): #Functions are always defined in global scope: Scope says where Data/Algorithm is accessible 
+   # if code == "C":
+      #  if money >= 1:
+      #      print("You got a Coke")
+      #  else: 
+     #       print("You need more money")
+   # elif code == "J":
+    #    if money >= 2:
+      #      print("You got a juice")
+      #  else:
+       #     print("You need more money")
+  #  elif code == "W":
+       # if money >= 3:
+       #     print("You got a water")
+       # else:
+   #         print("You need more money")
+   # else:
+    #    print("Invalid Code")
 
-my_vending_machine(code,money)
+#my_vending_machine(code,money)
 
 
 #Finding max of numbers example 
@@ -35,21 +35,21 @@ my_vending_machine(code,money)
 #Code initially responsible for both gathering and evaluating information 
 #A function should never be responsible for input/getting data 
 
-def find_max(x,y,z):  #Just defining a function not using the function yet. Equivalent of recipe without ingredients if B and C are not yet defined 
-    max = x
-    if y > max:
-        max = y
-    if z > max:
-        max = z
+#def find_max(x,y,z):  #Just defining a function not using the function yet. Equivalent of recipe without ingredients if B and C are not yet defined 
+   # max = x
+    #if y > max:
+       # max = y
+    #if z > max:
+       # max = z
 
-    print(max) #x,y,z are variable of the function but we can use a,b,c later since just there value is being put into the function
+   # print(max) #x,y,z are variable of the function but we can use a,b,c later since just there value is being put into the function
 
 
-print("Please Enter 3 Numbers: ")
-a = int(input(": ")) #Eventually putting variables in global scope becomes an issue.
-b = int(input(": ")) #Can lead to collisions aka having two variables with the same name in the same scope 
-c = int(input(": "))
-find_max(a,b,c)
+#print("Please Enter 3 Numbers: ")
+#a = int(input(": ")) #Eventually putting variables in global scope becomes an issue.
+#b = int(input(": ")) #Can lead to collisions aka having two variables with the same name in the same scope 
+#c = int(input(": "))
+#find_max(a,b,c)
 
 
 #def foo(var): #Using the same name that is already being used as a global variable is called shadowing
@@ -146,3 +146,38 @@ find_max(a,b,c)
 
 # one thing you put in global space is your main() function 
 # the last thing you do is call main() at the end of your program 
+
+##Conventions: 
+## Running programs through defining main() and then running it 
+## """ """ Triple quotes 
+
+#def percentage_to_letter(percent = 99):
+   # """
+   # This a function that returns a letter grade based on a percentage 
+   # Args: percent (int)
+    #Return: letter (str)
+   # """
+
+#Don't need doc strings for main 
+
+#Accumulator pattern
+#result = 0 
+#for i in range(10):
+    #result = result + i 
+#print(result)
+
+
+def remove_vowels(string):
+    vowels = "aeiou"
+    vowels += vowels.upper()
+    result = "" #Can't change a string once it is created 
+    for ch in string: 
+        if ch not in vowels:
+            result += ch
+    return result
+
+def main():
+    mystring = str(input("Type a Phrase: "))
+    print(remove_vowels(mystring))
+
+main()
