@@ -35,13 +35,14 @@ def threenp1range(a): #Get the number of itrerations to reach 1 for all values f
     return coordinates
         
 def graph_coordinates(coordinates): 
-    window = pygame.display.set_mode()
+    window = pygame.display.set_mode((500,500))
+
     while 1: 
         pygame.event.get()
         window.fill("White")
         pygame.draw.lines(window, "Orange", False, coordinates)
         pygame.display.flip()
-        pygame.time.wait(5000)
+        pygame.time.wait(3000)
         break
 
 
