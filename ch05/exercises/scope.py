@@ -17,10 +17,11 @@ def exponent(a,b):
 def square(a):
     return exponent(a,2)
 
+def main():
+    print(multiply(5,10))
+    print(exponent(3,3))
+    print(square(4))
 
-
-print(multiply(5,10))
-print(exponent(3,3))
-print(square(4))
+main()
 
 
