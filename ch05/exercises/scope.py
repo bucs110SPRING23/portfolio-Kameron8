@@ -1,8 +1,8 @@
 def multiply(a,b):
     """
     This function takes two parameters and multiplies them together 
-    args: 2 integers
-    return: 1 integer
+    args: a (int), b (int)
+    return: (int)
     """
     count = 1
     c = 0 #Accumulator
@@ -14,8 +14,8 @@ def multiply(a,b):
 def exponent(a,b): 
     """
     This function takes two parameters and performs an exponent operation
-    args: 2 integers
-    return: 1 integer
+    args: a (int), b (int)
+    return: (int)
     """
     count = 1
     c = 1 #Accumulator does not always need to start at zero 
@@ -27,8 +27,8 @@ def exponent(a,b):
 def square(a):
     """
     This function squares the input 
-    args: integer 
-    return: integer 
+    args: a (int) 
+    return: (int) 
     """
     return exponent(a,2)
 
