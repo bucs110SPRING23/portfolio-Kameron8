@@ -5,7 +5,7 @@ def multiply(a,b):
     return: 1 integer
     """
     count = 1
-    c = 0
+    c = 0 #Accumulator
     while b >= count:
         c = c + a
         count += 1
@@ -18,7 +18,7 @@ def exponent(a,b):
     return: 1 integer
     """
     count = 1
-    c = 1
+    c = 1 #Accumulator does not always need to start at zero 
     while b >= count:
         c = c * a
         count += 1
@@ -33,9 +33,11 @@ def square(a):
     return exponent(a,2)
 
 def main():
-    print(multiply(5,10))
-    print(exponent(3,3))
-    print(square(4))
+    a = int(input("Enter a Number: "))
+    b = int(input("Enter a Number: "))
+    print(multiply(a,b))
+    print(exponent(a,b))
+    print(square(a))
 
 main()
 
