@@ -36,19 +36,37 @@ def threenp1range(a): #Get the number of itrerations to reach 1 for all values f
         
 def graph_coordinates(coordinates): 
     window = pygame.display.set_mode((500,500))
+    font = pygame.font.Font(None, 25)
+    y = []
 
     while 1: 
         pygame.event.get()
         window.fill("White")
         pygame.draw.lines(window, "Orange", False, coordinates)
+        for elem in coordinates:
+            if type(elem[1]) == tuple:
+                y.append(max(elem[1]))
+            else: 
+                y.append(elem[1])
+
+        max_y = str(max(y))
+        msg = font.render(max_y , True, "Dark Blue")
+        msg2 = font.render("Max Number of Iterations:", True, "Dark Blue")
+        window.blit(msg2, (50,150))
+        window.blit(msg, (300,150))
         pygame.display.flip()
         pygame.time.wait(3000)
         break
 
 
+
+
 def main():
     pygame.init()
     print(threenp1(int(input(": "))))
-    graph_coordinates(threenp1range(int(input(": "))))
+    coordinates = threenp1range(int(input(": ")))
+    print(coordinates)
+    graph_coordinates(coordinates)
+
 
 main()
