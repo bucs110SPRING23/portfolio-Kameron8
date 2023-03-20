@@ -1,3 +1,1 @@
-This is some data
-Here is some more data
-As a matter of fact here is even more data 
+["Hello", "Hi", "Muahahaha", "Omg another idea"]
