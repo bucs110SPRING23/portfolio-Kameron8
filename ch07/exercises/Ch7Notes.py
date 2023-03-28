@@ -48,7 +48,7 @@
     # One class per file 
     # Anything with double underscores on both sides is a dunder 
     #def __init__(self): #self is the instance being created 
-        #self.x = 0 #dot operator accessess instance variables of object 
+       # self.x = 0 #dot operator accessess instance variables of object 
         #self.y = 0
         #self.color = ""
 
@@ -69,3 +69,45 @@
 
 #p1.color = "red"
 # state of p1: x=10, y=0, color="red"
+
+##Classes should be named with TitleCase (Uppercase first letter) 
+
+import point 
+import random
+import turtle
+import pygame
+
+#1. Look in current file/module 
+#2. Look in python installed modules 
+#3. Look in python library 
+
+pygame.init()
+display = pygame.display.set_mode()
+p1 = point.LED(x=100, y=100 )
+
+points = []
+for p in range(20):
+   x = random.randint(0,100)
+   y = random.randint(0,100)
+   p = point.LED(x,y)
+   p.random_color()
+   points.append(p)
+   pygame.draw.circle(display, p.color, (p.rect.x, p.rect.y), p.radius)
+
+while 1:
+    pygame.display.flip()
+    pygame.time.wait(4000)
+    break
+
+
+#print(p1.xcoor, p1.ycoor, p1.color, type(p1), id(p1))
+#p2 = point.Point()
+#print(p2.xcoor, p2.ycoor, p2.color, type(p2), id(p2))
+
+#t = turtle.Turtle()
+#for p in points: 
+    #p.random_color() #Putting in p as the first argument 
+  #  t.color(p.color)
+   # t.goto(p.xcoor, p.ycoor)
+
+#turtle.Screen().exitonclick()

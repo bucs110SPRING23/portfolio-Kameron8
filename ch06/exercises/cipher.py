@@ -1,6 +1,8 @@
-## Exercise says alphanumeric but just worry about letters
 
-def caesar_cipher(text, shift):
+import json
+
+
+def caesar_cipher(text, shift=3):
     """
     Encrypts or decrypts a message using the Caesar cipher technique.
 
@@ -22,3 +24,14 @@ def caesar_cipher(text, shift):
             char = chr(start + new_pos)
         result += char
     return result
+
+
+
+def main():
+    starttext = open("assets/ciphertext.txt", "r").read().lower()
+    encryption = caesar_cipher(starttext)
+    fptr = open("assets/encrypted.txt", "w") #Creates new file 
+    fptr.write(encryption)
+    fptr.close()
+
+main()
