@@ -1,4 +1,3 @@
-import pygame
 import Rectangle
 
 class Surface: 
@@ -8,4 +7,9 @@ class Surface:
 
 
     def getRect(self):
+        """
+        this function allows for the values from the Rectangle class to be returned 
+        args: instance (self)
+        result: int (dimensions of a rectangle)
+        """
         return self.rect
