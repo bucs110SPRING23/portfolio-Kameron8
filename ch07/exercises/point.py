@@ -3,18 +3,14 @@ import pygame
 
 class LED:  
     
-    def __init__(self, x=0,y=0,color="red"): #self is the instance being created 
-        self.xcoor = abs(x) #dot operator accessess instance variables of object 
-        self.ycoor = abs(y)
+    def __init__(self, x=0,y=0, size = 20): #self is the instance being created 
         self.on = True
-        self.rect = pygame.Rect(abs(x), abs(y), 5, 5)
-        self.color = color
-        self.radius = 10
+        self.rect = pygame.Rect(abs(x), abs(y), size)
+        self.color = self.random_color()
 
     def random_color(self):
-        colors = ["blue", "purple", "orange", "pink"]
-        self.color = random.choice(colors)
-
+        return (random.randint(0,255), random.randint(0,255), random.randint(0,255))
+            
 
 ## Function does not return 
 
