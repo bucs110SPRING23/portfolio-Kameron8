@@ -89,6 +89,11 @@ class StringUtility:
 
 
     def cipher(self):
+        """
+        takes an input and shifts each letter in the alphabet by a factor of the length of the input 
+        args: self [str]
+        return: [str] shifted
+        """
         self.caesar_cipher = str(self)
         result = ""
         shift = len(self.caesar_cipher)
