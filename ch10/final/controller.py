@@ -8,7 +8,7 @@ class Controller:
     def mainloop(self): 
         for _ in range(5):
             print('\n')
-        print("Welcome to your weather report. Please enter your longitude and latitude to find out the temperature for today, the sunset time, andto recieve a fortune!")
+        print("Welcome to your weather report. Please enter your longitude and latitude to find out the temperature for today, the sunset time, and to recieve a fortune!")
         advice = AdviceSlipAPI()
         advice_slip = AdviceSlipAPI.get(advice)
         lat = str(input("Latitude: "))
