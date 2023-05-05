@@ -4,6 +4,6 @@
 
 ## KNOWN BUGS AND INCOMPLETE PARTS *Nope*
 
-## REFERENCES *https://www.geeksforgeeks.org/python-remove-square-brackets-from-list/ (to remove brackets from lists). And then also my API's which are linked in their respective files. *
+## REFERENCES *https://www.geeksforgeeks.org/python-remove-square-brackets-from-list/ (to remove brackets from lists). And then also my API's which are linked in their respective files.*
 
 ## MISCELLANEOUS COMMENTS *Nope*
