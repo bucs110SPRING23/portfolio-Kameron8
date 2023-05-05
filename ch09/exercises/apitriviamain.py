@@ -1,3 +1,3 @@
 import random
 import requests
-from src.apitrivia import TriviaProxyAPI
+from ch09.exercises.apitrivia import TriviaProxyAPI
