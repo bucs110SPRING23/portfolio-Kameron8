@@ -9,6 +9,14 @@ class AdviceSlipAPI:
         rerturn: none
         """
         self.url = "https://api.adviceslip.com/advice"
+    
+    def __str__(self):
+        """
+        returns the url as a string 
+        arg: self
+        return: self.url (str)
+        """
+        return f"{self.url}"
 
     def get(self):
         """

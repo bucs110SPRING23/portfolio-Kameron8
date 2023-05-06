@@ -9,6 +9,14 @@ class SunsetAPI():
         rerturn: none
         """
         self.url = f"https://api.sunrise-sunset.org/json?lat={lat}&lng={lng}&date=today"
+    
+    def __str__(self):
+        """
+        returns the url as a string 
+        arg: self
+        return: self.url (str)
+        """
+        return f"{self.url}"
 
     def get(self):
         """

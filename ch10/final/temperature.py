@@ -10,6 +10,14 @@ class TemperatureAPI():
         """
         self.url1 = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lng}&daily=temperature_2m_max&temperature_unit=fahrenheit&forecast_days=1&timezone=auto"
         self.url2 = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lng}&daily=temperature_2m_min&temperature_unit=fahrenheit&forecast_days=1&timezone=auto"
+    
+    def __str__(self):
+        """
+        returns the url as a string 
+        arg: self
+        return: self.url (str)
+        """
+        return f"{self.url}"
 
     def getmax(self):
         """
