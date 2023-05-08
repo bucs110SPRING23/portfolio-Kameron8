@@ -6,7 +6,7 @@ def pizza_size(size= "small"):
     """
     this function takes the user input and translates it into a size of the pizza 
     args: str ("small", "medium", or "large")
-    return: int (crust_diameter)
+    return: float (crust_diameter)
 
     """
     if size == "small":
@@ -25,7 +25,7 @@ def pizza_size(size= "small"):
 def crust(crust_diameter=300):
     """
     this function takes the diameter of the crust and shrinks it down a bit to make the cheese of the pizza
-    args: int (crust_diameter)
+    args: float (crust_diameter)
     result: float (cheese_diameter)
     """
     crust_pen = turtle.Turtle()
@@ -38,10 +38,10 @@ def crust(crust_diameter=300):
     return cheese_diameter
 
 
-def placing_pepperoni(pepperoni="yes", cheese_diameter=300/1.1):
+def placing_pepperoni(pepperoni="no", cheese_diameter=300/1.1):
     """
     this function allows the user to select whether to put pepperoni on their pizza or not 
-    arg: str ("yes" or anything else)
+    arg: str ("yes" or "no")
     result: float (cheese_diameter)
     """
     if pepperoni == "yes":
